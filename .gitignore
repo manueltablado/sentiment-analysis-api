@@ -1,0 +1,11 @@
+# Ignore the virtual environment
+venv/
+
+# Ignore checkpoints and intermediate results
+results/
+
+# Ignore cache files
+__pycache__/
+
+# Ignore data if sensitive or large
+data/reviews.tsv
