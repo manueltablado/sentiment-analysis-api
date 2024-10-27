@@ -11,4 +11,4 @@ __pycache__/
 data/reviews.tsv
 
 # Ignore model trained
-fine_tuned_model/
+fine_tuned_model
