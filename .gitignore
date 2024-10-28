@@ -7,8 +7,5 @@ results/
 # Ignore cache files
 __pycache__/
 
-# Ignore data if sensitive or large
-data/reviews.tsv
-
 # Ignore model trained
 fine_tuned_model
