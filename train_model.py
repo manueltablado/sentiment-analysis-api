@@ -25,8 +25,8 @@ training_args = TrainingArguments(
     save_strategy="epoch",
     per_device_train_batch_size=8,
     per_device_eval_batch_size=8,
-    num_train_epochs=5,  # Change from 3 to 5 epochs
-    learning_rate=1e-5,  # Adjust learning rate
+    num_train_epochs=5,
+    learning_rate=1e-5,
     logging_dir="./logs",
     load_best_model_at_end=True,
     weight_decay=0.01
@@ -56,3 +56,10 @@ predictions = trainer.predict(val_dataset)
 preds = torch.argmax(torch.tensor(predictions.predictions), axis=1)
 accuracy = accuracy_score(val_labels, preds)
 print(f"Validation Accuracy: {accuracy:.2%}")
+
+# Report
+with open("metrics_report.txt", "w") as report_file:
+    report_file.write(f"Accuracy: {results['eval_accuracy']}\n")
+    report_file.write(f"Precision: {results['eval_precision']}\n")
+    report_file.write(f"Recall: {results['eval_recall']}\n")
+    report_file.write(f"F1 Score: {results['eval_f1']}\n")
